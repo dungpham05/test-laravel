@@ -27,4 +27,40 @@ localhost/register
 localhost/api/login
 
 # create a blog
+localhost/api/create
 - add to header `Accept: application/json`, `Authorization: bearer {token after login will show}`
+- add to body by raw-json `{
+    "title": "ex",
+    "description": "ex",
+    "content": "ex",
+    "slug": "ex"
+}`
+
+# update a blog
+localhost/api/create
+- add to header `Accept: application/json`, `Authorization: bearer {token after login will show}`
+- add to body by raw-json `{
+    "id": "1"
+    "title": "fix",
+    "description": "fix",
+    "content": "fix",
+    "slug": "fix"
+}`
+
+# delete a blog
+localhost/api/delete
+- add to header `Accept: application/json`, `Authorization: bearer {token after login will show}`
+- add to body by raw-json `{
+    "id": "1"
+}`
+
+# get list a blog
+localhost/api/list
+- add to header `Accept: application/json`, `Authorization: bearer {token after login will show}`
+
+# get detail a blog
+localhost/api/detail
+- add to header `Accept: application/json`, `Authorization: bearer {token after login will show}`
+- add to body by raw-json `{
+    "id": "1"
+}`
