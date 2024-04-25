@@ -21,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group([
+    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'biensoxe',
+], function ($router) {
+    Route::get('/', 'LicensePlateController@index')->name('biensoxe');
+    Route::get('/search', 'LicensePlateController@search')->name('biensoxe.search');
+});
