@@ -37,8 +37,10 @@ class LicensePlateController extends Controller
      */
     public function search(Request $request)
     {
-        $search = $request->search;
-        $data = $this->licensePlateRepo->findByField(['number_search' => $search]);
+        $data = $this->licensePlateRepo->findByField([
+            'number_search' => $request->search,
+            'type' => $request->type
+        ]);
 
         return view('license_plate', ['data' => $data->first()]);
     }
